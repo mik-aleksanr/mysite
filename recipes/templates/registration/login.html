@@ -1,0 +1,15 @@
+{% extends "recipes/base.html" %}
+
+{% block title %}Авторизация{% endblock %}
+
+{% block content %}
+<div class="features">
+  <h4>Добавлять рецепты могут только зарегистрированные пользователи</h4>
+  <form method="post" action="{% url 'login' %}">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button class="btn btn-success" type="submit">Войти</button>
+
+  </form>
+</div>
+{% endblock %}

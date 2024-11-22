@@ -1,0 +1,21 @@
+{% extends "recipes/base.html" %}
+{% block title %}Добавить рецепт{% endblock %}
+{% block content %}
+<div class="features">
+    <h2>Добавить рецепт</h2>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.title }}<br>
+        {{ form.description }}<br>
+        {{ form.preparation_steps }}<br>
+        {{ form.preparation_time }}<br>
+        <label for="image">Изображение</label><br>
+        <input type="file" name="image" id="image"><br>
+        <br>
+        {{ form.categories }}<br>
+        {{ form.author }}<br>
+
+        <button class="btn btn-success" type="submit">Сохранить</button>
+    </form>
+</div>
+{% endblock %}
